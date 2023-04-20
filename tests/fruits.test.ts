@@ -33,15 +33,11 @@ describe("test fruits routers", () => {
 
     it("when expecific fruit exist", async () => {
 
-        const fruitInput = {
-            name:"banana",
-            price: 10
-        }
-
-        await server.post("/fruits").send(fruitInput);
         const result = await server.get("fruits/630dcba0-5123-464d-8213-62c518924261");
+        console.log(result.body)
 
         expect(result.status).toBe(200);
+        expect(result.body.length).toBe(1);
     })
 
 })
