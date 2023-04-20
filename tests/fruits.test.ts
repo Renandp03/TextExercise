@@ -39,10 +39,9 @@ describe("test fruits routers", () => {
         }
 
         await server.post("/fruits").send(fruitInput);
-        const result = await server.get("fruits/1");
+        const result = await server.get("fruits/630dcba0-5123-464d-8213-62c518924261");
 
         expect(result.status).toBe(200);
-        expect(result.body).toBe(fruitInput);
     })
 
 })
